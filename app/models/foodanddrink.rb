@@ -1,0 +1,2 @@
+class FoodAndDrink < Deal
+end

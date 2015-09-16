@@ -1,0 +1,2 @@
+class Travel < Deal
+end

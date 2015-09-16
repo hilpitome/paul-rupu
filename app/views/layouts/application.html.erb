@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HilaOnline</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+    <%=link_to "Food & drinks", foodanddrinks_path%>
+    <%=link_to "Beauty", beauties_path%>
+    <%= link_to 'New Deal', new_deal_path %>
+
+
+<%= yield %>
+
+</body>
+</html>

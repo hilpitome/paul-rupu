@@ -1,0 +1,2 @@
+class HomeAndLiving < Deal
+end

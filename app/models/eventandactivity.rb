@@ -1,0 +1,2 @@
+class EventAndActivity < Deal
+end
