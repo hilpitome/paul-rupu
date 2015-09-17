@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Deals</h1>
+<!-- <h1>Listing Deals</h1>
 
 <table>
   <thead>
@@ -26,4 +26,45 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
+
+
+<div class="row">
+<% @deals.each do |deal| %>
+
+
+  <li><%= link_to 'Show', deal %></li>
+  <li><%= link_to 'Edit', edit_deal_path(deal) %></li>
+  <li><%= link_to 'Destroy', deal, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+
+
+
+
+       <div class="col s4">
+         <div class="card">
+           <div class="card-image">
+              <%= image_tag deal.image.url %>
+           </div>
+
+           <div class="card-content">
+             <div class="row">
+               <div class="col s8">
+             <p><a href="#"><span style="color:black"><%= deal.description %></span></p>
+               <br>
+               <p><small><span style="color:grey"><%= deal.title %></span></small></p>
+               <p><span style="color:grey; text-decoration: line-through">2,550</span>  <span style="color:green;font-weight:bold"><%= deal.price%></span>  .<span style="color:red;font-weight:bold">save 650/-</span></p>
+             </div>
+               <div class="col s4">
+                 <!-- <%= image_tag("buy.jpg", :alt => "rss feed") %> -->
+                 <button class="btn waves-effect waves-light" type="buy" name="action">BUY
+               </div>
+             </div>
+           </div>
+  </div>
+
+</div>
+<%end%>
+</div>
+
+    <%=link_to "Beauty", beauties_path%>
+    <%= link_to 'New Deal', new_deal_path %>
