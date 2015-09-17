@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   resources :deals
+  resources :travels, :controller => "deals", :type => "Travel"
+  resources :eventsandactivities, :controller => "deals", :type => "EventAndActivity"
   resources :foodanddrinks, :controller => "deals", :type => "FoodAndDrink"
   resources :beauties, :controller => "deals", :type => "Beauty"
+  resources :electronics, :controller => "deals", :type => "Electronic"
+  resources :fashions, :controller => "deals", :type => "Fashion"
+  resources :homeandlivings, :controller => "deals", :type => "HomeAndLiving"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

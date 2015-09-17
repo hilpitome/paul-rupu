@@ -10,10 +10,10 @@
 
   <div class="top ">
       <div class="row">
-<div class="col s4">SUPPORT/CALL TO ORDER?</div>
-<div class="col s4">FREE DELIVERY?</div>
-<div class="col s4">PAY ON DELIVERY?</div>
-</div>
+       <div class="col s4">SUPPORT/CALL TO ORDER?</div>
+       <div class="col s4">FREE DELIVERY?</div>
+       <div class="col s4">PAY ON DELIVERY?</div>
+      </div>
 
   </div>
 
@@ -41,16 +41,16 @@
       <hr>
       <div class="navtop">
       <div class="row">
-<div class="col s1">TRAVEL</div>
-<div class="col s2"><%=link_to "Food & drinks", foodanddrinks_path%></div>
+<div class="col s1"><%=link_to "TRAVEL", travels_path%></div>
+<div class="col s2"><%=link_to "FOOD & DRINKS", foodanddrinks_path%></div>
 
-<div class="col s2">EVENTS & ACTIVITIES</div>
-<div class="col s1">BEAUTY</div>
-<div class="col s2">ELECTRONICS</div>
-<div class="col s2">FASHION</div>
-<div class="col s2">HOME & LIVING</div>
+<div class="col s2"><%=link_to "EVENTS & ACTIVITIES", eventsandactivities_path%></div>
+<div class="col s1"><%=link_to "BEAUTY", beauties_path%></div>
+<div class="col s2"><%=link_to "ELECTRONICS", electronics_path%></div>
+<div class="col s2"><%=link_to "FASHION", fashions_path%></div>
+<div class="col s2"><%=link_to "HOME & LIVING", homeandlivings_path%></div>
       </div>
-
+  <%= link_to 'New Deal', new_deal_path %>
 <%= yield %>
 
 </body>
