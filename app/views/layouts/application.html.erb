@@ -33,6 +33,15 @@
 <div class="col s3"> <button class="btn waves-effect waves-light" type="login" name="action">LOGIN
 
 </button>
+<hr>
+<h6>
+        <% if logged_in? %>
+          <%= "Logged in as #{current_user.email}" %>
+        <% else %>
+          Logged out
+        <% end %>
+      </h6>
+
 </div>
 <div class="col s2"><%= image_tag("#", :alt => "rs feed") %></div>
 </div>
