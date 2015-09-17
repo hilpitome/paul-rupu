@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :carts
   resources :deals
+  resources :users
   resources :travels, :controller => "deals", :type => "Travel"
   resources :eventsandactivities, :controller => "deals", :type => "EventAndActivity"
   resources :foodanddrinks, :controller => "deals", :type => "FoodAndDrink"
