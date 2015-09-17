@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :carts
   resources :deals
   resources :travels, :controller => "deals", :type => "Travel"
   resources :eventsandactivities, :controller => "deals", :type => "EventAndActivity"
