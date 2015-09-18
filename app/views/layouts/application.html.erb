@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HilaOnline</title>
+  <title>puru</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -33,14 +33,15 @@
 <div class="col s3"> <button class="btn waves-effect waves-light" type="login" name="action">LOGIN
 
 </button>
-<hr>
-<h6>
+
+
         <% if logged_in? %>
           <%= "Logged in as #{current_user.email}" %>
+          <%= link_to "(logout)", logout_path %>
         <% else %>
-          Logged out
+          <%= link_to "(login)", login_path %>
         <% end %>
-      </h6>
+
 
 </div>
 <div class="col s2"><%= image_tag("#", :alt => "rs feed") %></div>

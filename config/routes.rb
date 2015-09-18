@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :line_items
+  root :to => 'users#index'
   resources :carts
   resources :deals
   resources :users
@@ -9,6 +11,11 @@ Rails.application.routes.draw do
   resources :electronics, :controller => "deals", :type => "Electronic"
   resources :fashions, :controller => "deals", :type => "Fashion"
   resources :homeandlivings, :controller => "deals", :type => "HomeAndLiving"
+  resources :user_sessions, only: [ :new, :create, :destroy ]
+
+get 'login'  => 'user_sessions#new', :as => :login
+get 'logout' => 'user_sessions#destroy', :as => :logout
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
