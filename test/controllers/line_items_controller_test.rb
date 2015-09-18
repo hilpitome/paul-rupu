@@ -21,7 +21,7 @@ class LineItemsControllerTest < ActionController::TestCase
       post :create, line_item: { cart_id: @line_item.cart_id, deal_id: @line_item.deal_id }
     end
 
-    assert_redirected_to line_item_path(assigns(:line_item))
+    assert_redirected_to line_item_path(assigns(:line_item).cart)
   end
 
   test "should show line_item" do

@@ -26,7 +26,8 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    @line_item = LineItem.new(line_item_params)
+    deal = Deal.find(params[:deal_id])
+    @line_item = @cart.line_items.build(deal: deal)
 
     respond_to do |format|
       if @line_item.save
