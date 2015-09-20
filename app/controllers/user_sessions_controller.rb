@@ -13,7 +13,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to(:deals, notice: 'Logged out!')
+    redirect_to(:deals_path, notice: 'Logged out!')
   end
   private
     # Use callbacks to share common setup or constraints between actions.

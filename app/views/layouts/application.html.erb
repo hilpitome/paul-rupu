@@ -44,22 +44,36 @@
 
 
 </div>
-<div class="col s2"><%= image_tag("shop.png", :alt => "rs feed") %></div>
+<div class="col s2">
+  <div class="row">
+    <div class="col s6">
+  <%= image_tag("shop.png", :alt => "rs feed") %>
+</div>
+
+    <div class="col s6">
+      <div class = "count">
 <%= "#{LineItem.count}"%>
+</div>
+    </div>
+
+
+</div>
+</div>
+
 </div>
 <%= image_tag("navtop.jpg", :alt => "rss feed") %>
   </div>
       <hr>
       <div class="navtop">
       <div class="row">
-<div class="col s1"><%=link_to "TRAVEL", travels_path%></div>
-<div class="col s2"><%=link_to "FOOD & DRINKS", foodanddrinks_path%></div>
+<div class="col s1"><b><%=link_to "TRAVEL", travels_path%></b></div>
+<div class="col s2"><b><%=link_to "FOOD & DRINKS", foodanddrinks_path%></b></div>
 
-<div class="col s2"><%=link_to "EVENTS & ACTIVITIES", eventsandactivities_path%></div>
-<div class="col s1"><%=link_to "BEAUTY", beauties_path%></div>
-<div class="col s2"><%=link_to "ELECTRONICS", electronics_path%></div>
-<div class="col s2"><%=link_to "FASHION", fashions_path%></div>
-<div class="col s2"><%=link_to "HOME & LIVING", homeandlivings_path%></div>
+<div class="col s2"><b><%=link_to "EVENTS & ACTIVITIES", eventsandactivities_path%></b></div>
+<div class="col s1"><b><%=link_to "BEAUTY", beauties_path%></b></div>
+<div class="col s2"><b><%=link_to "ELECTRONICS", electronics_path%></b></div>
+<div class="col s2"><b><%=link_to "FASHION", fashions_path%></b></div>
+<div class="col s2"><b><%=link_to "HOME & LIVING", homeandlivings_path%></b></div>
       </div>
   <%= link_to 'New Deal', new_deal_path %>
 <%= yield %>
