@@ -3,10 +3,12 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 <h2>Your Pragmatic Cart</h2>
+<%= link_to "empty cart", clear_cart_path%>
 <ul>
-<% @cart.line_items.each do |item| %>
-<li><%= item.deal.title %></li>
-<% end %>
+<% @cart.line_items.each do |deal_id| %>
+<% deal = Deal.find_by_id(id)%>
+
+    <li><%= link_to deal.title deal %></li><% end %>
 </ul>
 
 <%= link_to 'Edit', edit_cart_path(@cart) %> |

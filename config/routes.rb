@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
 get 'login'  => 'user_sessions#new', :as => :login
 get 'logout' => 'user_sessions#destroy', :as => :logout
+get 'clear/cart' => 'cart#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
