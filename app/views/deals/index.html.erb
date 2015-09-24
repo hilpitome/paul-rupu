@@ -16,7 +16,7 @@
   <tbody>
     <% @deals.each do |deal| %>
       <tr>
-        <td><%= deal.title %></td>
+
         <td><%= deal.price %></td>
         <td><%= deal.description %></td>
         <td><%= image_tag deal.image.url %></td>
@@ -53,12 +53,13 @@
              <p><a href="#"><span style="color:black"><%= deal.description %></span></p>
                <br>
                <p><small><span style="color:grey"><%= "by #{deal.company}" %></span></small></p>
-               <p><span style="color:grey; text-decoration: line-through">2,550</span>  <span style="color:green;font-weight:bold"><%= deal.price%></span>  .<span style="color:red;font-weight:bold">save 650/-</span></p>
+               <p><span style="color:grey; text-decoration: line-through"><%=deal.old_price%></span>  <span style="color:green;font-weight:bold"><%= deal.price%></span>  .<span style="color:red;font-weight:bold"><%="save #{deal.old_price - deal.price}/-"%></span></p>
              </div>
                <div class="col s4">
                  <!-- <%= image_tag("buy.jpg", :alt => "rss feed") %> -->
                  <!-- <button class="btn waves-effect waves-light" type="buy" name="action">BUY -->
                  <%= button_to 'BUY NOW!', line_items_path(deal_id: deal),  :class =>"button-buy" %>
+                 <%= link_to 'Edit', edit_deal_path(deal) %>
                </div>
              </div>
            </div>
