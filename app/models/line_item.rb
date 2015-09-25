@@ -5,5 +5,8 @@ class LineItem < ActiveRecord::Base
  # def to_s
  #   title
  # # end
+ def total_price
+ deal.price * quantity
+ end
 
 end
