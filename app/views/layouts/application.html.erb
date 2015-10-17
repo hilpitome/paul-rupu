@@ -19,9 +19,9 @@
 
   <div class="top2">
   <div class="row">
-      <div class="col s1"><p>.</p></div>
+
 <div class="col s2"><%= image_tag("logo.png", :alt => "rss feed")%></div>
-<div class="col s4">
+<div class="col s3">
 <form>
 <div class="input-field">
   <input type="search" id="search-field" class="field" required maxlength="">
@@ -29,25 +29,27 @@
   <i class="mdi-navigation-close close"></i>
 </div>
 </form>
-      </div>
-<div class="col s3"> <button class="btn waves-effect waves-light" type="login" name="action">LOGIN
+</div>
 
+<% if logged_in? %>
+<div class="col s3"> <button class="btn waves-effect waves-light" type="login" name="action">  <%= "#{current_user.email}" %>
 </button>
+</div>
+<div class="col s2">
+<%= link_to "logout", logout_path, :class=>"btn waves-effect waves-light" %>
+</div>
+<% else %>
 
-
-        <% if logged_in? %>
-          <%= "Logged in as #{current_user.email}" %>
-          <%= link_to "(logout)", logout_path %>
-        <% else %>
-          <%= link_to "(login)", login_path %>
-        <% end %>
-
+<div class="col s3"><%= link_to "login", login_path, :class=>"btn waves-effect waves-light" %>
 
 </div>
+<% end %>
+
+
 <div class="col s2">
   <div class="row">
     <div class="col s6">
-  <%=link_to image_tag("shop.png", :alt => "rs feed"), line_items_path  %>
+  <%=link_to image_tag("shop.png", :alt => "rs feed"), carts_path  %>
 </div>
 
     <div class="col s6">
