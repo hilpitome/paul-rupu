@@ -5,6 +5,8 @@ class Deal < ActiveRecord::Base
 
   has_many :line_items
   before_destroy :ensure_not_referenced_by_any_line_item
+  belongs_to :user
+
   private
 
 # ensure that there are no line items referencing this deal
