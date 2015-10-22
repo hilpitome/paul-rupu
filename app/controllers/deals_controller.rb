@@ -1,5 +1,7 @@
 class DealsController < ApplicationController
+  include CurrentCart
   before_action :set_deal, only: [:show, :edit, :update, :destroy]
+
 
   # GET /deals
   # GET /deals.json

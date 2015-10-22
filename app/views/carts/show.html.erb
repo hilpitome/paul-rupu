@@ -2,41 +2,4 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
-<h2>Your Pragmatic Cart</h2>
-<table>
-<thead>
-  <tr>
-    <th>Deal</th>
-    <th>Item</th>
-    <th>No. of Deals</th>
-    <th>price</th>
-    <th>Total price</th>
-
-  </tr>
-</thead>
-<tbody>
-
-<% @cart.line_items.each do |line_item| %>
-<tr>
-  <td><%= line_item.deal.company %></td>
-  <td><%= line_item.deal.description %></td>
-  <td><%= line_item.quantity %></td>
-  <td><%= number_to_currency(line_item.deal.price) %></td>
-  <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
-</tr>
-<% end %>
-<tr class="total_line">
-<td></td>
-<td></td>
-<td></td>
-<td class="total_title">Total</td>
-
-<td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-
-</tr>
-</tbody>
-</table>
-<%= button_to 'Empty cart', @cart, method: :delete,
-data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<%= render @cart %>

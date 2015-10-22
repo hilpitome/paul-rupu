@@ -20,42 +20,43 @@
   <div class="top2">
   <div class="row">
 
-<div class="col s2"><%= image_tag("logo.png", :alt => "rss feed")%></div>
-<div class="col s3">
-<form>
-<div class="input-field">
-  <input type="search" id="search-field" class="field" required maxlength="">
-  <label for="search-field"><i class="mdi-action-search"></i></label>
-  <i class="mdi-navigation-close close"></i>
-</div>
-</form>
-</div>
+    <div class="col s2"><%= image_tag("logo.png", :alt => "rss feed")%></div>
+    <div class="col s3">
+    <form>
+    <div class="input-field">
+      <input type="search" id="search-field" class="field" required maxlength="">
+      <label for="search-field"><i class="mdi-action-search"></i></label>
+      <i class="mdi-navigation-close close"></i>
+    </div>
+    </form>
+    </div>
 
 <% if logged_in? %>
-<div class="col s3"> <button class="btn waves-effect waves-light" type="login" name="action">  <%= "#{current_user.email}" %>
-</button>
-</div>
-<div class="col s2">
-<%= link_to "logout", logout_path, :class=>"btn waves-effect waves-light" %>
-</div>
-<% else %>
+  <div class="col s3">
+   <button class="btn waves-effect waves-light" type="login" name="action">  <%= "#{current_user.email}" %>
+  </button>
+  </div>
+  <div class="col s2">
+   <%= link_to "logout", logout_path, :class=>"btn waves-effect waves-light" %>
+  </div>
+  <% else %>
 
-<div class="col s3"><%= link_to "login", login_path, :class=>"btn waves-effect waves-light" %>
-
-</div>
+  <div class="col s3">
+   <%= link_to "login", login_path, :class=>"btn waves-effect waves-light" %>
+  </div>
 <% end %>
 
 
 <div class="col s2">
   <div class="row">
     <div class="col s6">
-  <%=link_to image_tag("shop.png", :alt => "rs feed"), carts_path  %>
-</div>
+     <%=link_to image_tag("shop.png", :alt => "rs feed"), carts_path  %>
+    </div>
 
     <div class="col s6">
       <div class = "count">
-<%= "#{LineItem.count}"%>
-</div>
+       <%= "#{LineItem.count}"%>
+     </div>
     </div>
 
 
@@ -67,16 +68,20 @@
   </div>
       <hr>
       <div class="navtop">
-      <div class="row">
-<div class="col s1"><b><%=link_to "TRAVEL", travels_path%></b></div>
-<div class="col s2"><b><%=link_to "FOOD & DRINKS", foodanddrinks_path%></b></div>
+        <div class="row">
+         <div id="side">
+        
+          <div class="col s1"><b><%=link_to "TRAVEL", travels_path%></b></div>
+          <div class="col s2"><b><%=link_to "FOOD & DRINKS", foodanddrinks_path%></b></div>
 
-<div class="col s2"><b><%=link_to "EVENTS & ACTIVITIES", eventsandactivities_path%></b></div>
-<div class="col s1"><b><%=link_to "BEAUTY", beauties_path%></b></div>
-<div class="col s2"><b><%=link_to "ELECTRONICS", electronics_path%></b></div>
-<div class="col s2"><b><%=link_to "FASHION", fashions_path%></b></div>
-<div class="col s2"><b><%=link_to "HOME & LIVING", homeandlivings_path%></b></div>
+          <div class="col s2"><b><%=link_to "EVENTS & ACTIVITIES", eventsandactivities_path%></b></div>
+          <div class="col s1"><b><%=link_to "BEAUTY", beauties_path%></b></div>
+          <div class="col s2"><b><%=link_to "ELECTRONICS", electronics_path%></b></div>
+          <div class="col s2"><b><%=link_to "FASHION", fashions_path%></b></div>
+          <div class="col s2"><b><%=link_to "HOME & LIVING", homeandlivings_path%></b></div>
+
       </div>
+    </div>
   <%= link_to 'New Deal', new_deal_path %>
 <%= yield %>
 
