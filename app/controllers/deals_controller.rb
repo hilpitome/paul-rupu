@@ -65,6 +65,16 @@ class DealsController < ApplicationController
     end
   end
 
+  def who_bought
+   @deal = Deal.find(params[:id])
+   @latest_order = @deal.orders.order(:updated_at).last
+   if stale?(@latest_order)
+    respond_to do |format|
+     format.atom
+    end
+   end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_deal
