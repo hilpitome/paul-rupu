@@ -1,4 +1,5 @@
 class LineItem < ActiveRecord::Base
+  belongs_to :order
   belongs_to :deal
   belongs_to :cart
 
@@ -6,7 +7,7 @@ class LineItem < ActiveRecord::Base
  #   title
  # # end
  def total_price
- deal.price * quantity
+  deal.price * quantity
  end
 
 end
