@@ -23,19 +23,19 @@
     <%= f.label :email %><br>
     <%= f.text_field :email, size: 40 %>
   </div>
+  <div class="row">
+  <div class="field col s6">
 
-  <div class="field">
-
-    <%= f.label :pay_type %><br>
+    <%= f.label :pay_type %><br/>
 
     <%= f.select :pay_type, Order::PAYMENT_TYPES,
                             prompt: 'Select a payment method'%>
   </div>
 
 
-  <div class="actions">
+  <div class="actions col s6">
     <%= f.submit 'Place order'%>
   </div>
-
+ </div>
 
 <% end %>
