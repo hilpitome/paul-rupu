@@ -33,7 +33,7 @@
 
 <% if logged_in? %>
   <div class="col s3">
-   <button class="btn waves-effect waves-light" type="login" name="action">  <%= "#{current_user.email}" %>
+   <button class="btn email waves-effect waves-light" type="login" name="action">  <%= "#{current_user.email}" %>
   </button>
   </div>
   <div class="col s2">
@@ -70,7 +70,7 @@
       <div class="navtop">
         <div class="row">
          <div id="side">
-        
+
           <div class="col s1"><b><%=link_to "TRAVEL", travels_path%></b></div>
           <div class="col s2"><b><%=link_to "FOOD & DRINKS", foodanddrinks_path%></b></div>
 
