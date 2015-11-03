@@ -1,4 +1,8 @@
+<% if line_item == @current_item %>
+<tr id="current_item">
+<% else %>
 <tr>
+<% end %>
   <td><%= line_item.deal.company %></td>
   <td><%= line_item.deal.description %></td>
   <td><%= line_item.quantity %></td>

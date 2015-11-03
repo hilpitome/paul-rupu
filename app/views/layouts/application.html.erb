@@ -55,7 +55,11 @@
 
     <div class="col s6">
       <div class = "count">
-       <%= "#{LineItem.count}"%>
+        <% if session[:cart_id] == nil %>
+          <%= "0" %>
+          <% else %>
+          <%= "#{LineItem.count}"%>
+        <% end %>
      </div>
     </div>
 
