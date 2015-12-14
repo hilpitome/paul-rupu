@@ -10,9 +10,9 @@
 
   <div class="top ">
       <div class="row">
-       <div class="col s4">SUPPORT/CALL TO ORDER?</div>
-       <div class="col s4">FREE DELIVERY?</div>
-       <div class="col s4">PAY ON DELIVERY?</div>
+       <div class="col-md-4">SUPPORT/CALL TO ORDER?</div>
+       <div class="col-md-4">FREE DELIVERY?</div>
+       <div class="col-md-4">PAY ON DELIVERY?</div>
       </div>
 
   </div>
@@ -20,8 +20,8 @@
   <div class="top2">
   <div class="row">
 
-    <div class="col s2"><%= image_tag("logo.png", :alt => "rss feed")%></div>
-    <div class="col s3">
+    <div class="col-md-2"><%= image_tag("logo.png", :alt => "rss feed")%></div>
+    <div class="col-md-3">
     <form>
     <div class="input-field">
       <input type="search" id="search-field" class="field" required maxlength="">
@@ -32,34 +32,32 @@
     </div>
 
 <% if logged_in? %>
-  <div class="col s3">
-   <button class="btn email waves-effect waves-light" type="login" name="action">  <%= "#{current_user.email}" %>
+  <div class="col-md-3">
+   <button class="btn" type="login" name="action">  <%= "#{current_user.email}" %>
   </button>
   </div>
-  <div class="col s2">
+  <div class="col-md-2">
    <%= link_to "logout", logout_path, :class=>"btn waves-effect waves-light" %>
   </div>
   <% else %>
 
-  <div class="col s3">
+  <div class="col-md-3">
    <%= link_to "login", login_path, :class=>"btn waves-effect waves-light" %>
   </div>
 <% end %>
 
 
-<div class="col s2">
+<div class="col-md-2">
   <div class="row">
-    <div class="col s6">
+    <div class="col-md-6">
      <%=link_to image_tag("shop.png", :alt => "rs feed"), carts_path  %>
     </div>
 
-    <div class="col s6">
+    <div class="col-md-6">
       <div class = "count">
-        <% if session[:cart_id] == nil %>
-          <%= "0" %>
-          <% else %>
+
           <%= "#{LineItem.count}"%>
-        <% end %>
+
      </div>
     </div>
 
@@ -75,14 +73,14 @@
         <div class="row">
          <div id="side">
 
-          <div class="col s1"><b><%=link_to "TRAVEL", travels_path%></b></div>
-          <div class="col s2"><b><%=link_to "FOOD & DRINKS", foodanddrinks_path%></b></div>
+          <div class="col-md-1"><b><%=link_to "TRAVEL", travels_path%></b></div>
+          <div class="col-md-2"><b><%=link_to "FOOD & DRINKS", foodanddrinks_path%></b></div>
 
-          <div class="col s2"><b><%=link_to "EVENTS & ACTIVITIES", eventsandactivities_path%></b></div>
-          <div class="col s1"><b><%=link_to "BEAUTY", beauties_path%></b></div>
-          <div class="col s2"><b><%=link_to "ELECTRONICS", electronics_path%></b></div>
-          <div class="col s2"><b><%=link_to "FASHION", fashions_path%></b></div>
-          <div class="col s2"><b><%=link_to "HOME & LIVING", homeandlivings_path%></b></div>
+          <div class="col-md-2"><b><%=link_to "EVENTS & ACTIVITIES", eventsandactivities_path%></b></div>
+          <div class="col-md-1"><b><%=link_to "BEAUTY", beauties_path%></b></div>
+          <div class="col-md-2"><b><%=link_to "ELECTRONICS", electronics_path%></b></div>
+          <div class="col-md-2"><b><%=link_to "FASHION", fashions_path%></b></div>
+          <div class="col-md-2"><b><%=link_to "HOME & LIVING", homeandlivings_path%></b></div>
 
       </div>
     </div>
