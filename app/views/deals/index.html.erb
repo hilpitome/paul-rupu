@@ -1,45 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-
-
+<% @deals.each_slice(3) do |row| -%>
 <div class="row">
 
-<% @deals.each do |deal| %>
+  <% row.each do |deal| %>
+         <div class="card col-md-4"> 
+           <div class="card-block">
 
+              <%= image_tag deal.image.url%>
 
-  <!-- <li><%= link_to 'Show', deal %></li>
-  <li><%= link_to 'Edit', edit_deal_path(deal) %></li>
-  <li><%= link_to 'Destroy', deal, method: :delete, data: { confirm: 'Are you sure?' } %></li> -->
-
-
-
-
-       <div class="col s12 m4">
-         <div class="card">
-           <div class="card-image">
-              <%= image_tag deal.image.url %>
            </div>
            <hr>
-           <div class="card-content">
-             <div class="row">
-               <div class="col s8">
+           <div class="card-block">
+
+
              <p><a href="#"><span style="color:black"><%= deal.description %></span></p>
                <br>
-               <p><small><span style="color:grey"><%= "by #{deal.company}" %></span></small></p>
+               <p class="card-text"><small><span style="color:grey"><%= "by #{deal.company}" %></span></small></p>
                <p><span style="color:grey; text-decoration: line-through"><%=deal.old_price%></span>  <span style="color:green;font-weight:bold"><%= deal.price%></span>  .<span style="color:red;font-weight:bold"><%="save #{deal.old_price - deal.price}/-"%></span></p>
-             </div>
-               <div class="col s4">
-                 <!-- <%= image_tag("buy.jpg", :alt => "rss feed") %> -->
-                 <!-- <button class="btn waves-effect waves-light" type="buy" name="action">BUY -->
+
+
+
                  <%= button_to 'BUY NOW!', line_items_path(deal_id: deal),  :class =>"button-buy" %>
                  <%= link_to 'Edit', edit_deal_path(deal) %>
-               </div>
-             </div>
-           </div>
-  </div>
 
-</div>
+
+           </div>
+        </div>
+
 
 <%end%>
 
 </div>
+<%end%>
