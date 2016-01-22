@@ -16,7 +16,7 @@
 
 
 
- @import "bootstrap-sprockets";
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
  #body{
@@ -31,11 +31,14 @@
      background-color: black;
      padding: 1px;
  }
+ .card-block{
+   padding: 0px;
+ }
  .deal-image {
    max-width: 360px;
  }
  deal-text {
-  
+
  }
  .input-field input[type=search] {
    display: block;
