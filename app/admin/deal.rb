@@ -22,6 +22,7 @@ permit_params :price, :old_price, :description, :company, :type, :image, :addres
 		f.select :type, options_for_select(%w[Travel FoodAndDrink EventAndActivities Beauty Beauty])
 		f.input :image
 		f.input :address
+		actions
 	end
 
 end
