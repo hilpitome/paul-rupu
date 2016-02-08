@@ -31,7 +31,7 @@
 
   <div class="field">
     <%= f.label :type %><br>
-    <%= f.text_field :type %>
+   <%= f.select :type, options_for_select(%w[Travel FoodAndDrink EventAndActivities Beauty Beauty Electronic Fashion HomeAndLiving]) %>
   </div>
   <div>
     <%= f.label :image, "Attach an Image" %><br />
