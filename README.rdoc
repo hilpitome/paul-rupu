@@ -1,1 +1,1 @@
-This is a ruby on rails version of the e-commerce website <a href = "https://www.rupu.co.ke/">rupu</a> which was done in php
+This is a ruby on rails version of the e-commerce website <a href = "https://www.rupu.co.ke">rupu</a> which was done in php
