@@ -13,8 +13,9 @@ Rails.application.routes.draw do
   resources :fashions, :controller => "deals", :type => "Fashion"
   resources :homeandlivings, :controller => "deals", :type => "HomeAndLiving"
   resources :user_sessions, only: [ :new, :create, :destroy ]
-  root :to => 'users#index'
+  root :to => 'deals#index'
   resources :deals do
+
     get :who_bought, on: :member
   end
 
@@ -23,6 +24,5 @@ Rails.application.routes.draw do
   get "signup" => "users#new", :as => :signup
   get 'clear/cart' => 'cart#destroy'
 
-
-
+  
 end
