@@ -19,7 +19,7 @@ permit_params :price, :old_price, :description, :company, :type, :image, :addres
 		f.input :old_price
 		f.input :description
 		f.input :company
-		f.select :type, options_for_select(%w[Travel FoodAndDrink EventAndActivities Beauty Beauty])
+		f.select :type, options_for_select(%w[Travel FoodAndDrink EventAndActivities Beauty])
 		f.input :image
 		f.input :address
 		actions
