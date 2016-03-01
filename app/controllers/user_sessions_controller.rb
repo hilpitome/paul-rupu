@@ -1,4 +1,5 @@
 class UserSessionsController < ApplicationController
+  before_action :set_user_session, only: [:show, :edit, :update, :destroy]
   def new
   end
 

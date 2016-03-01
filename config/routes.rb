@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     get :who_bought, on: :member
   end
 
-  get 'login'  => 'user_sessions#new', :as => :login
+  get 'login'  => 'user_sessions#create', :as => :login
   get 'logout' => 'user_sessions#destroy', :as => :logout
   get "signup" => "users#new", :as => :signup
   get 'clear/cart' => 'cart#destroy'
