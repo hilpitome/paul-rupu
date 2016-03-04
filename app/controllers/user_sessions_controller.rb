@@ -1,10 +1,11 @@
 class UserSessionsController < ApplicationController
-  before_action :set_user_session, only: [:show, :edit, :update, :destroy]
+  before_action :set_user_session, only: [:show, :edit, :update]
   def new
   end
 
   def create
     if login(params[:email], params[:password])
+
       redirect_back_or_to(deals_path, notice: 'Logged in successfully.')
     else
       flash.now.alert = "Login failed."
@@ -14,7 +15,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to(:users, notice: 'Logged out!')
+    redirect_to(:deals, notice: 'Logged out!')
   end
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :deals do
 
     get :who_bought, on: :member
+    
   end
 
   get 'login'  => 'user_sessions#create', :as => :login
@@ -24,5 +25,5 @@ Rails.application.routes.draw do
   get "signup" => "users#new", :as => :signup
   get 'clear/cart' => 'cart#destroy'
 
-  
+
 end

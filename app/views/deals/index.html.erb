@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <% @deals.each_slice(3) do |row| -%>
-<div class="row deal-group">
+
 
   <% row.each do |deal| %>
          <div class="card col-md-4">
@@ -11,26 +11,24 @@
 
            </div>
            <hr>
-           
-     
-            <div class="deal-text">
 
 
-             <p><a href="#"><span style="color:black"><%= deal.description %></span></p>
-               
-                <p><span style="color:grey; text-decoration: line-through"><%=deal.old_price%></span>  <span style="color:green;font-weight:bold"><%= deal.price%></span>  .<span style="color:red;font-weight:bold"><%="save #{deal.old_price - deal.price}/-"%></span></p>
-               <p class="card-text"><small><span style="color:grey"><%= "by #{deal.company}" %></span></small></p>
-              
+            <div class="deal-text col-offset-0">
 
-                 <%= button_to 'BUY !', line_items_path(deal_id: deal),  :class =>"button-buy" %>
-                
+            <p><span style="color:grey; text-decoration: line-through"><%=deal.old_price%></span>  <span style="color:green;font-weight:bold"><%= deal.price%></span>  .<span style="color:red;font-weight:bold"><%="save #{deal.old_price - deal.price}/-"%></span></p>
+
+            <p class="card-text"><small><span style="color:grey"><%= "by #{deal.company}" %></span></small></p>
+
+            <%= button_to 'BUY !', line_items_path(deal_id: deal),  :class =>"button-buy" %>
+
             </div>
 
+
            </div>
-       
+
 
 
   <%end%>
 
-</div>
+
 <%end%>
