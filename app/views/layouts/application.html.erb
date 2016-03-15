@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <div class="top ">
+  <div class="top">
       <div class="row">
        <div class="col-md-4">SUPPORT/CALL TO ORDER?</div>
        <div class="col-md-4">FREE DELIVERY?</div>
@@ -42,8 +42,10 @@
   <% else %>
 
   <div class="col-md-3">
-   <%= link_to "login", login_path, :class=>"btn waves-effect waves-light" %>
+    <%= link_to "login", login_path, class: "btn waves-effect waves-light" %>
+
     <%= link_to "Sign Up", signup_path, :class=>"btn waves-effect waves-light" %>
+    </button>
   </div>
 
 
@@ -57,11 +59,18 @@
     </div>
 
     <div class="col-md-6">
+    <% if session[:cart_id] == nil %>
+      <div class = "count">
+       <%= "#{0}" %>
+      </div>
+    <%else%>
+
       <div class = "count">
 
-          <%= "#{LineItem.count}"%>
+        <%= "#{current_cart.line_items.count}"%>
 
      </div>
+     <%end%>
     </div>
 
 
@@ -78,15 +87,15 @@
 
           <div class="col-md-1"><b><%=link_to "TRAVEL", travels_path%></b></div>
           <div class="col-md-2"><b><%=link_to "FOOD & DRINKS", foodanddrinks_path%></b></div>
-
           <div class="col-md-2"><b><%=link_to "EVENTS & ACTIVITIES", eventsandactivities_path%></b></div>
-          <div class="col-md-1"><b><%=link_to "BEAUTY", beauties_path%></b></div>
+          <div class="col-md-2"><b><%=link_to "BEAUTY", beauties_path%></b></div>
           <div class="col-md-2"><b><%=link_to "ELECTRONICS", electronics_path%></b></div>
-          <div class="col-md-2"><b><%=link_to "FASHION", fashions_path%></b></div>
+          <div class="col-md-1"><b><%=link_to "FASHION", fashions_path%></b></div>
           <div class="col-md-2"><b><%=link_to "HOME & LIVING", homeandlivings_path%></b></div>
 
       </div>
     </div>
+  </div>
 
 <%= yield %>
 

@@ -12,19 +12,28 @@
            </div>
            <hr>
 
+          <div class="row">
+            
+            <div class="deal-text col-md-8">
 
-            <div class="deal-text col-offset-0">
+            <p><span style="color:grey; text-decoration: line-through" ><%=deal.old_price%></span>  <span style="color:green;font-weight:bold"><%= deal.price%></span>.<span style="color:red;font-weight:bold"><%="save #{deal.old_price - deal.price}/-"%></span></p>
 
-            <p><span style="color:grey; text-decoration: line-through"><%=deal.old_price%></span>  <span style="color:green;font-weight:bold"><%= deal.price%></span>  .<span style="color:red;font-weight:bold"><%="save #{deal.old_price - deal.price}/-"%></span></p>
 
-            <p class="card-text"><small><span style="color:grey"><%= "by #{deal.company}" %></span></small></p>
+            </div>
+            <div class="col-md-4">
 
-            <%= button_to 'BUY !', line_items_path(deal_id: deal),  :class =>"button-buy" %>
+             <%= button_to 'BUY !', line_items_path(deal_id: deal),  :class =>"button-buy" %>
 
             </div>
 
+          </div>
 
-           </div>
+          <div class="row company">
+            <p><small><span style="color:grey"><%= "by #{deal.company}" %></span></small></p>
+          </div>
+
+
+        </div>
 
 
 

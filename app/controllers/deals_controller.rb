@@ -6,7 +6,9 @@ class DealsController < ApplicationController
   # GET /deals
   # GET /deals.json
   def index
-    @deals = Deal.where(:type => params[:type])
+
+    @deals = Deal.where(:type => params[:type]).last(3)
+
   end
 
   # GET /deals/1
