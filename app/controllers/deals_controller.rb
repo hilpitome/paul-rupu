@@ -1,13 +1,18 @@
 class DealsController < ApplicationController
+
   include CurrentCart
   before_action :set_deal, only: [:show, :edit, :update, :destroy]
 
 
   # GET /deals
   # GET /deals.json
+  def home
+    @deals = Deal.all
+  end
+
   def index
 
-    @deals = Deal.where(:type => params[:type]).last(3)
+    @deals = Deal.where(:type => params[:type])
 
   end
 

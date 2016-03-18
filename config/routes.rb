@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
+  root 'deals#home'
   resources :orders
   resources :line_items
   resources :carts
@@ -13,11 +14,11 @@ Rails.application.routes.draw do
   resources :fashions, :controller => "deals", :type => "Fashion"
   resources :homeandlivings, :controller => "deals", :type => "HomeAndLiving"
   resources :user_sessions, only: [ :new, :create, :destroy ]
-  root :to => 'deals#index'
+
   resources :deals do
 
     get :who_bought, on: :member
-    
+
   end
 
   get 'login'  => 'user_sessions#create', :as => :login
