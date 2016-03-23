@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
       redirect_to deals_url, notice: "Your cart is empty"
       return
     end
-    @order = Order.new
+      @order = Order.new
   end
 
   # GET /orders/1/edit
@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifier.received(@order).deliver
-        format.html { redirect_to deals_url, notice: 'Thank you for your order.' }
+        format.html { redirect_to root_url,   notice: "PLEASE NOT THIS IS A DEMO APP, DO NOT SEND ANY MONEY TO ANYONE!!" }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
